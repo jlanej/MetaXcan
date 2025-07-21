@@ -100,7 +100,7 @@ def load_gwas(source, gwas_format, strict=True, separator=None, skip_until_heade
         logging.info("Reading input gwas: %s", source)
         if separator is None or separator == "ANY_WHITESPACE":
             separator = '\s+'
-        d = pandas.read_table(source, separator)
+        d = pandas.read_table(source, sep=separator)
 
     logging.info("Processing input gwas")
     d = _rename_columns(d, gwas_format)
